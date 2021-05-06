@@ -38,8 +38,11 @@ var numeriGiusti = [];
 var score = 0;
 
 /* Un alert espone 5 numeri generati casualmente. da 1 a 100*/
-for (var i = 0; i < 5; i++) {
-    numeriCasuali.push(getRandomNumber(1, 100));
+while (numeriCasuali.length < 5) {
+    var numeroCasuale = getRandomNumber(1, 100);
+    if (!isInArray(numeroCasuale, numeriCasuali)) {
+        numeriCasuali.push(numeroCasuale);
+    }
 }
 alert("NUMERI CASUALI: " + numeriCasuali);
 
